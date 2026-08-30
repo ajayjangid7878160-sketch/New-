@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endava - Job Opportunities</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #fff;
+            color: #111;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .phone-container {
+            width: 100%;
+            max-width: 480px;
+            background: #fff;
+            min-height: 100vh;
+            padding: 15px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ff3b30;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .logo span {
+            color: #ff3b30;
+        }
+
+        .get-job-top-btn {
+            background-color: #ff3b30;
+            color: white;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .badge-pill {
+            background-color: #ffeaea;
+            color: #ff3b30;
+            text-align: center;
+            padding: 8px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        /* Hero Section */
+        .hero-title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .hero-desc {
+            text-align: center;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+
+        /* Action Buttons */
+        .action-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 10px rgba(255, 59, 48, 0.2);
+        }
+
+        .btn-red {
+            background-color: #ff473d;
+            color: white;
+        }
+
+        .btn-white {
+            background-color: #ffffff;
+            color: #111;
+            border: 2px solid #eee;
+        }
+
+        /* Stats Row 1 */
+        .stats-row {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            margin: 25px 0;
+            padding: 10px 0;
+        }
+
+        .stat-item h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: #111;
+        }
+
+        .stat-item p {
+            font-size: 11px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        /* Team Section */
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 800;
+            margin: 25px 0 10px 0;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .manager-card {
+            background: #fff5f5;
+            border: 1px solid #ffd1d1;
+            border-radius: 15px;
+            padding: 15px;
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .fast-response {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: #ff473d;
+            color: white;
+            font-size: 9px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .manager-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .manager-icon {
+            width: 35px;
+            height: 35px;
+            background: #ff473d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        .manager-details h4 {
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .manager-details p {
+            font-size: 11px;
+            color: #666;
+        }
+
+        .manager-desc {
+            font-size: 11px;
+            color: #444;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .manager-btn {
+            width: 100%;
+            background: #ff473d;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        /* Job Cards */
+        .job-card {
+            background: #fff;
+            border: 1px solid #ffccd0;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .job-number {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+            background: #ff473d;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: #111;
+        }
+
+        .job-list {
+            list-style: none;
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .job-list li strong {
+            color: #111;
+        }
+
+        .job-btn {
+            width: 100%;
+            background: #ff473d;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Stats Box Red */
+        .stats-box-red {
+            background: #ff473d;
+            color: white;
+            border-radius: 15px;
+            padding: 25px 15px;
+            margin: 25px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            text-align: center;
+        }
+
+        .red-stat-item h2 {
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .red-stat-item p {
+            font-size: 11px;
+            margin-top: 4px;
+            opacity: 0.9;
+        }
+
+        .testimonials-pill {
+            background: #ff473d;
+            color: white;
+            text-align: center;
+            padding: 6px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 700;
+            width: 120px;
+            margin: 0 auto 15px auto;
+        }
+
+        /* Testimonial Cards */
+        .testimonial-card {
+            background: #fff5f5;
+            border: 1px solid #ffd1d1;
+            border-radius: 15px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .user-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 32px;
+            height: 32px;
+            background: #ff473d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .user-details h5 {
+            font-size: 13px;
+            font-weight: 700;
+        }
+
+        .user-details span {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .stars {
+            color: #ffb800;
+            font-size: 11px;
+        }
+
+        .testimonial-text {
+            font-size: 11px;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        /* Footer Banner */
+        .footer-banner {
+            background: #ff473d;
+            border-radius: 15px;
+            padding: 25px 15px;
+            text-align: center;
+            color: white;
+            margin-top: 25px;
+        }
+
+        .footer-banner h3 {
+            font-size: 18px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .footer-banner p {
+            font-size: 11px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+            opacity: 0.9;
+        }
+
+        .footer-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+<div class="phone-container">
+
+    <div class="header">
+        <div class="logo">
+            <i class="fa-solid fa-circle" style="font-size: 10px;"></i>endava
+        </div>
+        <button class="get-job-top-btn">Get Your Job <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+    <div class="badge-pill">
+        Genuine Home - Based IT Sectors Jobs
+    </div>
+
+    <h1 class="hero-title">ENDAVA — JOB OPPORTUNITIES</h1>
+    <p class="hero-desc">Endava is an international technology company with its Main Branch in Australia and a Second Branch in India (Hyderabad).</p>
+
+    <button class="action-btn btn-red">
+        Get Your Job <i class="fa-solid fa-paper-plane"></i>
+    </button>
+    <button class="action-btn btn-white">
+        Contact For Work <i class="fa-solid fa-paper-plane"></i>
+    </button>
+
+    <div class="stats-row">
+        <div class="stat-item">
+            <h3>₹40,000+</h3>
+            <p>Monthly Reward Potential</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Monthly Reward Potential</p>
+        </div>
+    </div>
+    <div style="text-align: center; margin-top: -15px; margin-bottom: 20px;">
+        <h3 style="font-size: 20px; font-weight: 800;">1,800+</h3>
+        <p style="font-size: 11px; color: #666;">Active Safe employees</p>
+    </div>
+
+    <h2 class="section-title">Get in Touch with our Team</h2>
+    <p class="section-subtitle">Choose Your Preferred platform to connect with our official career Coordinators. we are available to answer your questions and Assign Project immediately.</p>
+
+    <div class="manager-card">
+        <div class="fast-response">FAST RESPONSE</div>
+        <div class="manager-info">
+            <div class="manager-icon">
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+            <div class="manager-details">
+                <h4>Contact Manager</h4>
+                <p>Nitin Kumar — Program Manager</p>
+            </div>
+        </div>
+        <p class="manager-desc">12+ Years Experience<br>Get guidance, project support, and help with assignments throughout the program.<br>Connect with Manager →</p>
+        <button class="manager-btn">Contact Manager</button>
+    </div>
+
+    <h2 class="section-title">Jobs We Are Offering You</h2>
+    <p class="section-subtitle">Explore genuine career opportunities with flexible work, expert guidance, skill development, and performance-based growth. Get the support you need to learn, grow, and build long-term career opportunities.</p>
+
+    <div class="job-card">
+        <div class="job-number">1</div>
+        <h3 class="job-title">WEB DEVELOPER</h3>
+        <ul class="job-list">
+            <li>1. Registration Fees - <strong>₹ 999</strong></li>
+            <li>2. Daily Working Time - <strong>2 to 4 Hours Per day</strong></li>
+            <li>3. Salary - <strong>60,000 to 1 Lakh+ a month</strong></li>
+            <li>4. Note - You will receive your Advance Half salary within 20 minutes of completing the registration, based on your experience.</li>
+        </ul>
+        <button class="job-btn">Get Your Job <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+    <div class="job-card">
+        <div class="job-number">2</div>
+        <h3 class="job-title">UI/UX DESIGNER</h3>
+        <ul class="job-list">
+            <li>1. Registration Fees - <strong>₹ 999</strong></li>
+            <li>2. Daily Working Time - <strong>2 to 4 Hours Per day</strong></li>
+            <li>3. Salary - <strong>60,000 to 1 Lakh+ a month</strong></li>
+            <li>4. Note - You will receive your Advance Half salary within 20 minutes of completing the registration, based on your experience.</li>
+        </ul>
+        <button class="job-btn">Get Your Job <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+    <div class="job-card">
+        <div class="job-number">3</div>
+        <h3 class="job-title">DATA ENTRY EXECUTIVE</h3>
+        <ul class="job-list">
+            <li>1. Registration Fees - <strong>₹ 999</strong></li>
+            <li>2. Daily Working Time - <strong>2 to 4 Hours Per day</strong></li>
+            <li>3. Salary - <strong>30,000 to 60,000+ a month</strong></li>
+            <li>4. Note - You will receive your Advance Half salary within 20 minutes of completing the registration, based on your experience.</li>
+        </ul>
+        <button class="job-btn">Get Your Job <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+    <div class="job-card">
+        <div class="job-number">4</div>
+        <h3 class="job-title">TELECOM EXECUTIVE</h3>
+        <ul class="job-list">
+            <li>1. Registration Fees - <strong>₹ 999</strong></li>
+            <li>2. Daily Working Time - <strong>2 to 4 Hours Per day</strong></li>
+            <li>3. Salary - <strong>45,000 to 70,000+ a month</strong></li>
+            <li>4. Note - You will receive your Advance Half salary within 20 minutes of completing the registration, based on your experience.</li>
+        </ul>
+        <button class="job-btn">Get Your Job <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+    <div class="stats-box-red">
+        <div class="red-stat-item">
+            <h2>1800+</h2>
+            <p>Happy Employees</p>
+        </div>
+        <div class="red-stat-item">
+            <h2>2000+</h2>
+            <p>New Jobs</p>
+        </div>
+        <div class="red-stat-item">
+            <h2>99%</h2>
+            <p>Success Rate</p>
+        </div>
+        <div class="red-stat-item">
+            <h2>24*7</h2>
+            <p>Support</p>
+        </div>
+    </div>
+
+    <div class="testimonials-pill">TESTIMONIALS</div>
+    <h2 class="section-title" style="margin-top: 0;">What Our Employees Say</h2>
+
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-left">
+                <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-details">
+                    <h5>Priya Sharma</h5>
+                    <span>Web Developer</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">Got my first opportunity as a Web Developer at Endava. Great work environment, practical IT exposure, and a MacBook provided for work.</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-left">
+                <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-details">
+                    <h5>Ankit Patel</h5>
+                    <span>UI/UX DESIGNER</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">Started my career at Endava as a UI/UX Designer. Smooth onboarding, supportive team, and a MacBook provided for work.</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-left">
+                <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-details">
+                    <h5>Soniya Sain</h5>
+                    <span>Web Developer</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">Got my first opportunity as a Web Developer at Endava. Supportive environment, practical IT exposure, and a MacBook provided for work.</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-left">
+                <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-details">
+                    <h5>Komal Mittal</h5>
+                    <span>TELECOM EXECUTIVE</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">Joined Endava as a fresher in Data Telecom. Clear work process, supportive team, and a MacBook provided for work.</p>
+    </div>
+
+    <div class="testimonial-card">
+        <div class="user-info">
+            <div class="user-left">
+                <div class="user-avatar"><i class="fa-solid fa-user"></i></div>
+                <div class="user-details">
+                    <h5>Abhishek Sharma</h5>
+                    <span>DATA ENTRY EXECUTIVE</span>
+                </div>
+            </div>
+            <div class="stars">★★★★★</div>
+        </div>
+        <p class="testimonial-text">Got my first job at Endava as a Data Entry Executive. Smooth process, proper guidance, and a MacBook provided for work.</p>
+    </div>
+
+    <div class="footer-banner">
+        <h3>Ready to Start Your First Project</h3>
+        <p>Massage Our Manager Now And Get Your Job Today</p>
+        <button class="footer-btn">Get Your Job <i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+
+</div>
+
+</body>
+</html>
